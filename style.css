@@ -1,0 +1,218 @@
+/*  CODED BY BUI NGOC WITH LUV
+    SELF DESIGN
+*/
+*{
+    padding:0;
+    margin:0;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+:root{
+    --primary-color: #f09573;
+    --second--color:#bfbfbf;
+    --title-font:3rem;
+    --font-color: #696969;
+    --border-style: .1rem solid var(--second--color);
+    --font-size-normal: 1.6rem;
+    --font-size-small:1.4rem;
+    --focus-color: #ee774c;
+    --margin: 0 2.5rem;
+    --box-shadow: 0 .5rem 2rem var(--focus-color);
+}
+body{
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+}
+li{
+    list-style-type: none;
+}
+.wrapper{
+    background-color:#fff;
+    min-width: 32rem;
+    max-width:40rem;
+    padding-top:2rem;
+    /* padding:2rem 2.5rem; */
+    border-radius:2rem 2rem 0 0 
+}
+.active-effect:active{
+    background-color: var(--focus-color);
+    transform: scale(0.9);
+}
+.task-title{
+    font-size:var(--title-font);
+    text-align: center;
+    padding-bottom: 2rem;
+    text-transform: capitalize;
+    color: var(--font-color)
+}
+.task-input{
+    padding:0 .3rem;
+    display: flex;
+    margin: var(--margin)
+}
+.task-input input{
+    padding:.5rem .8rem;
+    border: var(--border-style);
+    font-size:var(--font-size-normal);
+    border-radius: .5rem;
+    flex:1
+}
+input:focus{
+    outline-color: var(--focus-color);
+}
+input::placeholder{
+    color: var(--second--color);
+}
+.task-controller{
+    display:flex;
+    padding:1.5rem 0;
+    align-items: center;
+    justify-content: space-between;
+    margin: var(--margin)
+}
+.task-controller__btn span{
+    font-size: var(--font-size-small);
+    color: var(--font-color);
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.task-controller__btn span:not(:first-child){
+    margin-left:1.2rem
+}
+.task-controller__btn span.active{
+    color: var(--primary-color)
+}
+.task-controller__clear{
+    padding:.6rem .9rem;
+    background-color:var(--primary-color);
+    border:none;
+    border-radius:.3rem;
+    color:#fff;
+    cursor:pointer;
+    transition:.1s linear;
+    outline:none;
+}
+.task-list{
+    border-top: var(--border-style);
+    padding: var(--margin);
+}
+.task-list .begin-task{
+    text-align: center;
+    font-size: var(--font-size-small);
+    padding:2rem 0;
+    color: var(--font-color)
+}
+.task-list.overflow {
+    overflow-y: auto;
+    max-height: 25rem;
+}
+.task-list::-webkit-scrollbar{
+    background-color: transparent;
+    width:.2rem;
+}
+.task-list::-webkit-scrollbar-button{
+    background-color: transparent;
+    height:0
+}
+.task-list::-webkit-scrollbar-thumb{
+    background-color: var(--focus-color);
+    border-radius:.1rem
+}
+.task-list .task-item{
+    font-size: var(--font-size-small);
+    display: flex;
+    justify-content: flex-start;
+    padding:2rem 0
+}
+.task-item.hide{display: none;}
+.task-list .task-item:not(:first-child){
+    border-top: var(--border-style)
+}
+.task-item label{
+    display: flex;
+    flex:1;
+    align-items: flex-start;
+    
+}
+.task-item .checkbox{
+    border-radius:0;
+    margin-right:1rem;
+    cursor: pointer;
+    height:2.1rem
+}
+.task-item__text{
+    color:rgba(0, 0, 0, 0.849);
+    word-wrap: break-word;
+    line-height: 1.5;
+    font-weight:400;
+}
+.task-item__text.checked{
+    text-decoration: line-through;
+    font-style: italic;
+}
+.task-setting{
+    position: relative;
+}
+.task-setting__menu{
+    position: absolute;
+    z-index: 10;
+    background-color: var(--primary-color);
+    box-shadow: var(--box-shadow);
+    border-radius: .6rem ;
+    padding:1rem 1.2rem;
+    top:2rem;
+    right:0;
+    transform: scale(0);
+    transition:.3s ease-in;
+    transform-origin: 100% 0;
+}
+.task-setting__menu.active{
+    transform: scale(1);
+}
+.task-setting-item{
+    display: flex;
+    cursor: pointer;
+    color:#fff
+}
+.task-setting__btn{
+    cursor: pointer;
+}
+.task-setting-item:not(:last-child){
+    padding-bottom:1rem
+}
+.task-setting-item i{
+    padding-right:.5rem
+}
+.task-setting__menu::before{
+    content:'';
+    z-index:9;
+    padding:1rem;
+    position:absolute;
+    background-color:var(--primary-color);
+    right:.5rem;
+    top:-.05rem;
+    transform: rotate(45deg)
+}
+.task-setting-item i{
+    cursor:pointer
+}
+.task-setting-item:hover .task-text{
+    animation: bound .5s linear
+}
+@keyframes bound{
+    from{
+        transform: translateY(0)
+    }
+    50%{
+        transform: translateY(-3px)
+    }
+    100%{
+        transform: translateY(0)
+
+    }
+}
