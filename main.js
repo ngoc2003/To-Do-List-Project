@@ -49,6 +49,9 @@ function taskBegin(checked, status) {
                 </li>`  
             }
         });
+        if (todos.every(todo => todo.status != status && status != 'all')) {
+            liContent = `<li class="begin-task">You don't have any task here!</li>`;
+        }
     }
     taskList.innerHTML = liContent;
 }
