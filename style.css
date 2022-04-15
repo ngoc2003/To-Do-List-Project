@@ -10,14 +10,14 @@ html{
     font-family: 'Roboto', sans-serif;
 }
 :root{
-    --primary-color: #f09573;
+    --primary-color: #f2bc9d;
     --second--color:#bfbfbf;
     --title-font:3rem;
     --font-color: #696969;
     --border-style: .1rem solid var(--second--color);
     --font-size-normal: 1.6rem;
     --font-size-small:1.4rem;
-    --focus-color: #ee774c;
+    --focus-color: #e3a480;
     --margin: 0 2.5rem;
     --box-shadow: 0 .5rem 2rem var(--focus-color);
 }
