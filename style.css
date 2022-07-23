@@ -17,7 +17,7 @@ html{
     --border-style: .1rem solid var(--second--color);
     --font-size-normal: 1.6rem;
     --font-size-small:1.4rem;
-    --focus-color: #e3a480;
+    --focus-color: #e09970;
     --margin: 0 2.5rem;
     --box-shadow: 0 .5rem 2rem var(--focus-color);
 }
@@ -94,8 +94,11 @@ input::placeholder{
     border-radius:.3rem;
     color:#fff;
     cursor:pointer;
-    transition:.1s linear;
+    transition:.2s linear;
     outline:none;
+}
+.task-controller__clear:hover{
+    transform: scale(1.1)
 }
 .task-list{
     border-top: var(--border-style);
